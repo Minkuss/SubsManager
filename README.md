@@ -1,1 +1,1 @@
-"Just a simple subscriptions manager on React + TypeScript" 
+Just a simple subscriptions manager on React + TypeScript
