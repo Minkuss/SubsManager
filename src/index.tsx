@@ -5,9 +5,8 @@ import { getAnalytics } from "firebase/analytics";
 import "normalize.css";
 import "@blueprintjs/core/lib/css/blueprint.css";
 import "@blueprintjs/icons/lib/css/blueprint-icons.css";
-import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { CoreRouter } from "./core/router";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCS_lv3_M7Kw8eOFA45HE3ciEnFGkDj0As",
@@ -27,7 +26,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <CoreRouter />
   </React.StrictMode>
 );
 
