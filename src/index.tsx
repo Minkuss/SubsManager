@@ -4,10 +4,13 @@ import { initializeApp } from "firebase/app";
 import "normalize.css";
 import "@blueprintjs/core/lib/css/blueprint.css";
 import "@blueprintjs/icons/lib/css/blueprint-icons.css";
+import "@blueprintjs/popover2/lib/css/blueprint-popover2.css";
 import reportWebVitals from "./reportWebVitals";
 import { CoreRouter } from "./core/router";
 import { getAuth } from "firebase/auth";
 import { AuthContext } from "./context/authContext";
+import { FocusStyleManager } from "@blueprintjs/core";
+FocusStyleManager.onlyShowFocusOnTabs();
 
 const firebaseConfig = {
   apiKey: "AIzaSyCS_lv3_M7Kw8eOFA45HE3ciEnFGkDj0As",

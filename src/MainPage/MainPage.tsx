@@ -1,7 +1,8 @@
 import React, { FC, useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/authContext";
 import { useAuthStatus } from "../hooks/use-auth-status";
+import { AllScreen, ImportantScreen } from "../screens";
 import { TopNavigation } from "../TopNavigation";
 
 export const MainPage: FC = () => {
@@ -20,9 +21,16 @@ export const MainPage: FC = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: "rgba(35, 34, 34, 1)",
+      }}
+    >
       <TopNavigation />
-      <div>;sdf,</div>
+      <Routes>
+        <Route path="/all" element={<AllScreen />} />
+        <Route path="/important" element={<ImportantScreen />} />
+      </Routes>
     </div>
   );
 };

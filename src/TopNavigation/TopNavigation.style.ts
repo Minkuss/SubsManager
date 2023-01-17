@@ -26,6 +26,9 @@ export const btn = style({
     },
     "&:hover": {
       border: "1px dashed #FFFFFF"
+    },
+    "&:active": {
+      backgroundColor: "rgba(37, 37, 37, 1)"
     }
   }
 })
@@ -35,5 +38,12 @@ export const avatar = style({
   width: "70px",
   height: "70px",
   alignSelf: "center",
-  marginRight: "45px"
+})
+
+export const avatarBtn = style({
+  borderRadius: "100px",
+  width: "65px",
+  height: "65px",
+  alignSelf: "center",
+  marginRight: "45px",
 })
