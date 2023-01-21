@@ -4,6 +4,7 @@ import { AuthContext } from "../context/authContext";
 import { useAuthStatus } from "../hooks/use-auth-status";
 import { AllScreen, ImportantScreen } from "../screens";
 import { TopNavigation } from "../TopNavigation";
+import { UserBlock } from "../UserBlock";
 
 export const MainPage: FC = () => {
   const authStatus = useAuthStatus();
@@ -15,22 +16,15 @@ export const MainPage: FC = () => {
     navigate("/");
   }, [authStatus, navigate]);
 
-  const logOut = () => {
-    auth.signOut();
-    navigate("/");
-  };
-
   return (
     <div
       style={{
         backgroundColor: "rgba(35, 34, 34, 1)",
+        display: "flex",
       }}
     >
-      <TopNavigation />
-      <Routes>
-        <Route path="/all" element={<AllScreen />} />
-        <Route path="/important" element={<ImportantScreen />} />
-      </Routes>
+      <AllScreen />
+      <UserBlock />
     </div>
   );
 };

@@ -4,7 +4,8 @@ import { style } from "typestyle";
 export const subsBody = style({
   display: "flex",
   flexDirection: "column",
-  alignItems: "center"
+  alignItems: "start",
+  width: "60%"
 })
 
 export const addBtn = style({
@@ -32,4 +33,16 @@ export const addBtn = style({
       backgroundColor: "rgba(37, 37, 37, 1)",
     },
   }  
+})
+
+export const inputLabel = style({
+  color: "white",
+  fontFamily: "Jura",
+  fontSize: "20px"
+})
+
+export const divider = style({
+  width: "100%",
+  border: "1px solid #FFFFFF",
+  marginTop: "10px",
 })
