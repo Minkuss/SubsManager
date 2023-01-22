@@ -48,8 +48,8 @@ export const SubsPage: FC<ISubsPage> = (props) => {
       >
         <Icon size={25} color="white" icon="add" />
       </Button>
-      <div className={classes.divider} />
-      <SubsContainer />
+      <Divider className={classes.divider} />
+      <SubsContainer service="Bebra" date="15 aug" price={15} />
     </div>
   );
 };

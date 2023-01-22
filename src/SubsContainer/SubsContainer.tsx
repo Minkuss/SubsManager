@@ -1,37 +1,68 @@
-import { Button } from "@blueprintjs/core";
+import { Button, Card } from "@blueprintjs/core";
+import { Popover2 } from "@blueprintjs/popover2";
 import { FC } from "react";
 import * as classes from "./SubsContainer.style";
 
-export const SubsContainer: FC = () => {
+interface ISubsContainer {
+  service: string;
+  date: string;
+  price: number;
+}
+
+export const SubsContainer: FC<ISubsContainer> = (props) => {
+  const { service, date, price }: ISubsContainer = {
+    ...defaultValues,
+    ...props,
+  };
+
   return (
     <div className={classes.subsContainer}>
-      <Button alignText="left" className={classes.subsBtn} minimal>
-        <span
-          style={{
-            paddingLeft: "10px",
-            float: "left",
-          }}
-          className={classes.btnSpan}
-        >
-          Netflix
-        </span>
-        <span
-          style={{
-            paddingRight: "70px",
-          }}
-          className={classes.btnSpan}
-        >
-          15 aug
-        </span>
-        <span
-          style={{
-            float: "right",
-          }}
-          className={classes.btnSpan}
-        >
-          15$
-        </span>
-      </Button>
+      <Popover2
+        content={<Card>Hello</Card>}
+        interactionKind="click"
+        placement="bottom"
+        renderTarget={({ isOpen, ref, ...targetProps }) => (
+          <Button
+            minimal
+            alignText="left"
+            elementRef={ref}
+            {...targetProps}
+            className={classes.subsBtn}
+          >
+            <span
+              style={{
+                paddingLeft: "10px",
+                float: "left",
+              }}
+              className={classes.btnSpan}
+            >
+              {service}
+            </span>
+            <span
+              style={{
+                paddingRight: "70px",
+              }}
+              className={classes.btnSpan}
+            >
+              {date}
+            </span>
+            <span
+              style={{
+                float: "right",
+              }}
+              className={classes.btnSpan}
+            >
+              {price}$
+            </span>
+          </Button>
+        )}
+      />
     </div>
   );
+};
+
+const defaultValues: Required<ISubsContainer> = {
+  price: 0,
+  date: "",
+  service: "",
 };

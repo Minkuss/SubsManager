@@ -5,7 +5,9 @@ export const subsBody = style({
   display: "flex",
   flexDirection: "column",
   alignItems: "start",
-  width: "60%"
+  width: "60%",
+  marginLeft: "5px",
+  marginTop: "5px",
 })
 
 export const addBtn = style({
@@ -43,6 +45,7 @@ export const inputLabel = style({
 
 export const divider = style({
   width: "100%",
-  border: "1px solid #FFFFFF",
-  marginTop: "10px",
+  borderBottom: "1px solid #FFFFFF",
+  margin: "0",
+  marginTop: "10px"
 })
